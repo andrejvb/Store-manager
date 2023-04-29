@@ -27,6 +27,8 @@ describe('Model Tests', () => {
       // Assert
       expect(result).to.be.an('object');
       expect(result).to.contain.keys(['id', 'name']);
+      expect(result).to.have.property('name').to.equal('Escudo do Capitão América');
+      expect(result).to.have.property('id').to.equal(3);
       expect(result).to.be.equal(mockByIdProduct[0]);
     });
   });
