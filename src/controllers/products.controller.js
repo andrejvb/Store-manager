@@ -14,4 +14,10 @@ const findById = async (req, res) => {
   return res.status(result.statusCode).json(result.message);
 };
 
-module.exports = { findAll, findById };
+const productRegister = async (req, res) => {
+  const product = req.body.name;
+  const result = await services.productRegister(product);
+  return res.status(result.statusCode).json(result.message);
+};
+
+module.exports = { findAll, findById, productRegister };

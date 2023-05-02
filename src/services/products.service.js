@@ -7,11 +7,16 @@ const findAll = async () => {
 
 const findById = async (id) => {
   const result = await model.findById(id);
-  console.log('result: ', result);
   if (!result) {
     return { statusCode: 404, message: 'Product not found' };
   }
   return { statusCode: 200, message: result };
 };
 
-module.exports = { findAll, findById };
+const productRegister = async (product) => {
+  const result = await model.productRegister(product);
+  console.log('result SERVICE', result);
+  return { statusCode: 201, message: result };
+};
+
+module.exports = { findAll, findById, productRegister };
