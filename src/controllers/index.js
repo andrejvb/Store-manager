@@ -1,3 +1,5 @@
 const { findAll, findById, productRegister } = require('./products.controller');
 
-module.exports = { findAll, findById, productRegister };
+const { insertSale } = require('./sales.controller');
+
+module.exports = { findAll, findById, productRegister, insertSale };

@@ -47,6 +47,7 @@ services:
   db:
     container_name: store_manager_db
     image: mysql:8.0.32
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 'password'
     ports:
