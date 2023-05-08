@@ -5,4 +5,15 @@ const insertSale = async (body) => {
   return { statusCode: 201, message: result };
 };
 
-module.exports = { insertSale };
+const findAllSales = async () => {
+  const allSales = await model.findAllSales();
+  return { statusCode: 200, message: allSales };
+};
+
+const findSaleById = async (id) => {
+  const sale = await model.findSaleById(id);
+  if (sale.length === 0) return { statusCode: 404, message: 'Sale not found' };
+  return { statusCode: 200, message: sale };
+};
+
+module.exports = { insertSale, findAllSales, findSaleById };
