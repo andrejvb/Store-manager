@@ -7,7 +7,6 @@ const insertSale = async (body) => {
     'INSERT INTO StoreManager.sales_products (sale_id, product_id, quantity) VALUES (?, ?, ?);',
     [insertId, productId, quantity],
   )));
-  console.log('sales MODEL', body);
   return { id: insertId, itemsSold: body };
 };
 
