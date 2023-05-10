@@ -20,4 +20,13 @@ const productRegister = async (product) => {
   return { id: insertId, name: product };
 };
 
-module.exports = { findAll, findById, productRegister };
+const deleteProduct = async (id) => {
+  const [[result]] = await connection.execute(
+    'SELECT * FROM StoreManager.products WHERE id = (?);', [id],
+  );
+  if (result === undefined) return false;
+  await connection
+    .execute('DELETE FROM StoreManager.products WHERE id = (?);', [id]);
+};
+
+module.exports = { findAll, findById, productRegister, deleteProduct };

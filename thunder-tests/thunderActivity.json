@@ -92,5 +92,19 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "67fe3fa5-b6d5-4f77-8bc8-00734b53ce74",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3001/products Copy Copy",
+    "url": "http://localhost:3001/products/30",
+    "method": "DELETE",
+    "sortNum": 0,
+    "created": "2023-04-26T23:08:26.101Z",
+    "modified": "2023-05-10T01:05:58.789Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]

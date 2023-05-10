@@ -19,4 +19,10 @@ const productRegister = async (product) => {
   return { statusCode: 201, message: result };
 };
 
-module.exports = { findAll, findById, productRegister };
+const deleteProduct = async (id) => {
+  const result = await model.deleteProduct(id);
+  if (result === false) return { statusCode: 404, message: 'Product not found' };
+  return { statusCode: 204, message: {} };
+};
+
+module.exports = { findAll, findById, productRegister, deleteProduct };

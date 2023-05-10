@@ -20,4 +20,13 @@ const productRegister = async (req, res) => {
   return res.status(result.statusCode).json(result.message);
 };
 
-module.exports = { findAll, findById, productRegister };
+const deleteProduct = async (req, res) => {
+  const { id } = req.params;
+  const result = await services.deleteProduct(id);
+  if (result.statusCode === 404) {
+    return res.status(result.statusCode).json({ message: result.message });
+  }
+  return res.status(result.statusCode).json(result.message);
+};
+
+module.exports = { findAll, findById, productRegister, deleteProduct };
