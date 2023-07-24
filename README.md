@@ -40,6 +40,7 @@ git clone git@github.com:andrejvb/Store-manager.git
 
 Instale as dependências do projeto:
 cd Store-manager
+
 npm install
 
 Configure o banco de dados MySQL com as credenciais apropriadas (host, usuário, senha) no arquivo config.js.
